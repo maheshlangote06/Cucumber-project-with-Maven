@@ -41,7 +41,7 @@ public class MyStepdefs {
         driver.findElement(By.xpath("(//img[@role=\"button\"])[2]")).click();Thread.sleep(3000);
         // driver.findElement(By.xpath("")).click();Thread.sleep(3000);
 
-        driver.findElement(By.xpath("//input[@role=\"combobox\"]")).click();Thread.sleep(2000);
+
         driver.findElement(By.xpath("//span[@class=\"siebui-icon-dropdown applet-form-combo applet-list-combo\"]")).click();Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@placeholder='Enter your Openreach reference']")).sendKeys("SGEA03406280");Thread.sleep(3000);
         driver.findElement(By.xpath("//button[@data-display=\"Search\"]")).click();Thread.sleep(2000);
