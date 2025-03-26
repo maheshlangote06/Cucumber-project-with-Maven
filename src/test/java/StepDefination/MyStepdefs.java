@@ -13,7 +13,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import static java.sql.DriverManager.getDriver;
+import static org.testng.AssertJUnit.assertNotNull;
+
 public class MyStepdefs {
+    private WebElement element = null;
+    private String old_win = null;
+    private String lastWinHandle;
     SigningPage action = new SigningPage();
     AllMethode allMethode = new AllMethode();
     WebDriver driver;
@@ -38,13 +44,14 @@ public class MyStepdefs {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,150)", "");
         Thread.sleep(5000);
-        driver.findElement(By.xpath("(//img[@role=\"button\"])[2]")).click();Thread.sleep(3000);
+        driver.findElement(By.xpath("(//img[@role=\"button\"])[2]")).click();Thread.sleep(10000);
         // driver.findElement(By.xpath("")).click();Thread.sleep(3000);
+        String currHandle=driver.getWindowHandle();
+        assertNotNull(currHandle);Thread.sleep(5000);
 
-
-        driver.findElement(By.xpath("//span[@class=\"siebui-icon-dropdown applet-form-combo applet-list-combo\"]")).click();Thread.sleep(2000);
-        driver.findElement(By.xpath("//input[@placeholder='Enter your Openreach reference']")).sendKeys("SGEA03406280");Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[@data-display=\"Search\"]")).click();Thread.sleep(2000);
+        driver.findElement(By.xpath("//span[@class='siebui-icon-dropdown applet-form-combo applet-list-combo']")).click();Thread.sleep(5000);
+        driver.findElement(By.xpath("//input[@placeholder='Enter your Openreach reference']")).sendKeys("SGEA03406280");Thread.sleep(5000);
+        driver.findElement(By.xpath("//button[@data-display='Search']")).click();Thread.sleep(5000);
 
     }
     @When("ninjas meet, they will fight")
