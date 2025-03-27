@@ -1,9 +1,8 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SigningPage {
+public class SigningPage_Sabor {
     WebDriver driver;
     public void login() throws InterruptedException {
 

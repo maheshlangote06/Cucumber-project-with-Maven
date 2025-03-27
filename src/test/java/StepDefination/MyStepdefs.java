@@ -1,8 +1,7 @@
 package StepDefination;
 
-import AllMethodes.AllMethode;
-import Pages.SigningPage;
-import io.cucumber.java.en.And;
+import Utilities.AllMethode;
+import Pages.SigningPage_Sabor;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,18 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import static java.sql.DriverManager.getDriver;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 
 public class MyStepdefs {
-    private WebElement element = null;
-    private String old_win = null;
-    private String lastWinHandle;
-    SigningPage action = new SigningPage();
+
+    SigningPage_Sabor action = new SigningPage_Sabor();
     AllMethode allMethode = new AllMethode();
     WebDriver driver;
 
@@ -48,7 +43,7 @@ public class MyStepdefs {
         driver.findElement(By.xpath("(//img[@role=\"button\"])[2]")).click();Thread.sleep(20000);
         // driver.findElement(By.xpath("")).click();Thread.sleep(3000);
         Object[] windowHandles=driver.getWindowHandles().toArray();
-        driver.switchTo().window((String) windowHandles[1]);
+        driver.switchTo().window((String) windowHandles[1]);Thread.sleep(3000);
 
         driver.findElement(By.xpath("//span[@class='siebui-icon-dropdown applet-form-combo applet-list-combo']")).click();Thread.sleep(5000);
         driver.findElement(By.xpath("(//div[@class='ui-menu-item-wrapper'])[2]")).click();Thread.sleep(5000);
