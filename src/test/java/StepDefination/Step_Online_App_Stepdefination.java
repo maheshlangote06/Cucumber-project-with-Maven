@@ -3,6 +3,10 @@ package StepDefination;
 import Utilities.Uti_Online_App;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Step_Online_App_Stepdefination extends Uti_Online_App {
     @Given("Login to application.")
@@ -18,5 +22,10 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
     @And("close the application")
     public void closeTheApplicationn() {
         closeTheApplication();
+    }
+
+    @Then("Open Challenging Dom section")
+    public void openChallengingDomSection() throws InterruptedException, IOException {
+        Challenging_DOM();
     }
 }
