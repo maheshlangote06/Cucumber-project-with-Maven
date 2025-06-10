@@ -41,8 +41,9 @@ public class Uti_Online_App extends PageObject.Object_Online_App {
         File file = new File("C:\\Users\\Asus\\Downloads\\Framework\\Xl file\\Book1.xlsx");
         FileInputStream inputStream = new FileInputStream(file);
 
-        XSSFSheet sheet = sheet.getSheetAt(0);
-        int rowCount=sheet.getLastRowNum()-sheet.getFirstRowNum();System.out.println(rowCount);
+        Workbook wb = new XSSFWorkbook(inputStream);
+        Sheet sheet1 = wb.getSheetAt(0);
+        int rowCount=sheet1.getLastRowNum()-sheet1.getFirstRowNum();System.out.println(rowCount);
 
     }
     public void closeTheApplication() {
