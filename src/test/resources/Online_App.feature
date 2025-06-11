@@ -3,5 +3,7 @@ Feature: LoginToApplication
   Scenario: Verify all Functionality of application
     Given Login to application.
    # And checking Add Remove Elements section
-    Then Open Challenging Dom section
-   And close the application
+     # Then Open Challenging Dom section
+    #Then Open Drag and Drop section
+    Then Open Dropdown Section
+    And close the application

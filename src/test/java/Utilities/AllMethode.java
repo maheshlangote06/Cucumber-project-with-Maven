@@ -1,5 +1,6 @@
 package Utilities;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,5 +25,8 @@ public class AllMethode {
     private void scrollToElement(WebElement webElement) throws Exception {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoViewIfNeeded()", webElement);
         Thread.sleep(500);
+    }
+    public void putwait() throws InterruptedException {
+       Thread.sleep(2000);
     }
 }
