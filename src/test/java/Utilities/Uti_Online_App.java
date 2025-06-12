@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.io.IOException;
 import java.util.List;
 
+import static java.awt.SystemColor.text;
+
 public class Uti_Online_App extends PageObject.Object_Online_App{
     WebDriver driver;
 
@@ -94,6 +96,18 @@ public class Uti_Online_App extends PageObject.Object_Online_App{
 //        objSelect2.selectByValue("Option 2");  Thread.sleep(2000);
 
 
+
+    }
+    public void EntryAD() throws InterruptedException {
+        driver.findElement(EntryAD).click();Thread.sleep(2000);
+
+
+        WebElement iFrame = driver.findElement(Iframe);
+        driver.switchTo().frame(iFrame);Thread.sleep(2000);
+        driver.findElement(ClickHere).click();Thread.sleep(2000);
+        WebElement Text = driver.findElement(Textt);
+        System.out.println(Text);Thread.sleep(2000);
+        driver.findElement(Click).click();Thread.sleep(2000);
 
     }
 

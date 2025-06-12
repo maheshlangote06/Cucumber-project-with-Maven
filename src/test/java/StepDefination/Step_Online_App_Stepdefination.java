@@ -42,4 +42,9 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
     public void openDropdownSection() throws InterruptedException {
         Dropdown();
     }
+
+    @Then("Open Entry AD Section")
+    public void openEntrADSection() throws InterruptedException {
+        EntryAD();
+    }
 }

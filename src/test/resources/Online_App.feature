@@ -5,5 +5,6 @@ Feature: LoginToApplication
    # And checking Add Remove Elements section
      # Then Open Challenging Dom section
     #Then Open Drag and Drop section
-    Then Open Dropdown Section
+    #Then Open Dropdown Section
+    Then Open Entry AD Section
     And close the application
