@@ -1,5 +1,6 @@
 package Utilities;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,8 +24,8 @@ public class Uti_Online_App extends PageObject.Object_Online_App{
         System.setProperty("webdriver.edge.driver", "C:\\Users\\Asus\\Downloads\\Framework\\msedgedriver.exe");
        // Logger log = LogManager.getLogger(LogExample.class.getName());
         driver = new EdgeDriver();
-        driver.get("https://the-internet.herokuapp.com/");  Thread.sleep(5000);
-        driver.manage().window().maximize();Thread.sleep(2000);
+        driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().window().maximize();Thread.sleep(1000);
         System.out.println("Page Opened");
         String pageTitle = driver.getTitle();
         System.out.println("Page Title: " + pageTitle);  Thread.sleep(2000);
@@ -88,6 +90,7 @@ public class Uti_Online_App extends PageObject.Object_Online_App{
         //selectByIndex: selectByIndex(int arg0) : void
         Select objSelect1 = new Select(driver.findElement(DropdownList));
         objSelect1.selectByIndex(1);  Thread.sleep(2000);
+        driver.navigate().back();Thread.sleep(2000);
 
         //objSelect1.deselectAll();  Thread.sleep(2000);
 
@@ -100,15 +103,48 @@ public class Uti_Online_App extends PageObject.Object_Online_App{
     }
     public void EntryAD() throws InterruptedException {
         driver.findElement(EntryAD).click();Thread.sleep(2000);
+        String text = driver.findElement(NewWindow).getText();
+        System.out.println(text);
+        driver.findElement(Close).click();Thread.sleep(2000);
+        driver.navigate().back();Thread.sleep(2000);
 
 
-        WebElement iFrame = driver.findElement(Iframe);
-        driver.switchTo().frame(iFrame);Thread.sleep(2000);
-        driver.findElement(ClickHere).click();Thread.sleep(2000);
-        WebElement Text = driver.findElement(Textt);
-        System.out.println(Text);Thread.sleep(2000);
-        driver.findElement(Click).click();Thread.sleep(2000);
 
+
+
+
+//
+//        WebElement iFrame = driver.findElement(Iframe);
+//        driver.switchTo().frame(iFrame);Thread.sleep(2000);
+//
+//        WebElement Text = driver.findElement(Textt);
+//        System.out.println(Text);Thread.sleep(2000);
+//        driver.findElement(Click).click();Thread.sleep(2000);
+
+
+    }
+    public void UploadFile() throws InterruptedException, IOException {
+        driver.findElement(ClickonFileUpload).click(); Thread.sleep(2000);
+       // WebElement chooseFile = driver.findElement(Choosefile);
+
+        // Use Actions class to move to the "Choose File" button and click on it
+//        Actions ac = new Actions(driver);
+//        ac.click(chooseFile).perform();
+//        Thread.sleep(2000);
+//        Runtime.getRuntime().exec("E:Software Quality Engineer.docx");
+//        Thread.sleep(2000);
+//        List<WebElement> uploadedPath= driver.findElements(By.cssSelector("E:\\Software Quality Engineer.docx"));
+//        if(!uploadedPath.isEmpty()) {
+//            System.out.println("File Uploaded successfully"); Thread.sleep(2000);
+//        }
+
+        File uploadFile = new File("E:\\Cognizant\\internship in shree ram industry.pdf");
+
+        WebElement fileInput = driver.findElement(Choosefile);
+        fileInput.sendKeys(uploadFile.getAbsolutePath());Thread.sleep(2000);
+        driver.findElement(Uploadfile).click(); Thread.sleep(2000);
+        System.out.println("File Uploaded Successfully");
+        driver.navigate().back();Thread.sleep(2000);
     }
 
 }

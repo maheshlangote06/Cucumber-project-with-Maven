@@ -6,5 +6,6 @@ Feature: LoginToApplication
      # Then Open Challenging Dom section
     #Then Open Drag and Drop section
     #Then Open Dropdown Section
-    Then Open Entry AD Section
+   # Then Open Entry AD Section
+    Then Open Upload File Section
     And close the application

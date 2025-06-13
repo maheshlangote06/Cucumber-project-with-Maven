@@ -47,4 +47,10 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
     public void openEntrADSection() throws InterruptedException {
         EntryAD();
     }
+
+    @Then("Open Upload File Section")
+    public void openUploadFileSection() throws IOException, InterruptedException {
+
+        UploadFile();
+    }
 }
