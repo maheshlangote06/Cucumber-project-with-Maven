@@ -53,4 +53,10 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
 
         UploadFile();
     }
+
+    @Then("Open Hovers Section")
+    public void openHoversSection() throws InterruptedException {
+        Hovers();
+    }
+
 }

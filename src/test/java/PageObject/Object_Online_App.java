@@ -20,5 +20,17 @@ public class Object_Online_App {
     public static By ClickonFileUpload = By.xpath("//a[normalize-space()='File Upload']");
     public static By Choosefile = By.xpath("//input[@id='file-upload']");
     public static By Uploadfile = By.xpath("//input[@id='file-submit']");
+    public static By HoriZon = By.xpath("//a[normalize-space()='Horizontal Slider']");
+    public static By slide = By.xpath("//input[@value='0']");
+    public static By Hover = By.xpath("//a[normalize-space()='Hovers']");
+    public static By HoverOnElement = By.xpath("//div[@class='example']//div[1]//img[1]");
+    public static By HoverOnElement1 = By.xpath("//div[@class='row']//div[2]//img[1]");
+    public static By HoverOnElement2 = By.xpath("//div[3]//img[1]");
+    public static By userName = By.xpath("//h5[normalize-space()='name: user1']");
+    public static By userName1 = By.xpath("//h5[normalize-space()='name: user2']");
+    public static By userName2 = By.xpath("//h5[normalize-space()='name: user3']");
+    public static By ViewProfile = By.xpath("//div[@class='row']//div[3]//div[1]//a[1]");
+
+
 
 }

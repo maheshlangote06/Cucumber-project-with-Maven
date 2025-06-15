@@ -7,5 +7,6 @@ Feature: LoginToApplication
     #Then Open Drag and Drop section
     #Then Open Dropdown Section
    # Then Open Entry AD Section
-    Then Open Upload File Section
+   # Then Open Upload File Section
+    Then Open Hovers Section
     And close the application
