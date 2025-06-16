@@ -30,6 +30,7 @@ public class Object_Online_App {
     public static By userName1 = By.xpath("//h5[normalize-space()='name: user2']");
     public static By userName2 = By.xpath("//h5[normalize-space()='name: user3']");
     public static By ViewProfile = By.xpath("//div[@class='row']//div[3]//div[1]//a[1]");
+    public static By InfinteScoll = By.xpath("//a[normalize-space()='Infinite Scroll']");
 
 
 

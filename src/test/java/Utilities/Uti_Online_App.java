@@ -1,7 +1,6 @@
 package Utilities;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.devtools.v132.network.model.Response;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,13 +11,18 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-import static java.awt.SystemColor.text;
-
 public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
     WebDriver driver;
 
     AllMethode methode = new AllMethode();
 
+    public void ScrollintoView(By infinteScoll) throws InterruptedException {
+        Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);
+        WebElement element = driver.findElement(infinteScoll);   Thread.sleep(2000);
+        js.executeScript("arguments[0].scrollIntoView()", element);
+        element.click();
+    }
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
         System.setProperty("webdriver.edge.driver", "C:\\Users\\Asus\\Downloads\\Framework\\msedgedriver.exe");
@@ -177,6 +181,12 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
         } else {
             System.out.println("User details not available");
         }
+
+    }
+    public void InfiniteScroll() throws InterruptedException {
+        Thread.sleep(2000);
+        ScrollintoView(InfinteScoll);
+
 
     }
 }

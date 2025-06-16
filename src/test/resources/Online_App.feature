@@ -8,5 +8,6 @@ Feature: LoginToApplication
     #Then Open Dropdown Section
    # Then Open Entry AD Section
    # Then Open Upload File Section
-    Then Open Hovers Section
+  #  Then Open Hovers Section
+    Then Open Infinite Scroll Section
     And close the application

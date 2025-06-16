@@ -59,4 +59,8 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
         Hovers();
     }
 
+    @Then("Open Infinite Scroll Section")
+    public void openInfiniteScrollSection() throws InterruptedException {
+        InfiniteScroll();
+    }
 }
