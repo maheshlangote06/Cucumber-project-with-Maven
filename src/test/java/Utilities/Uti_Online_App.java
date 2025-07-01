@@ -21,11 +21,11 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
         JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);
         WebElement element = driver.findElement(infinteScoll);   Thread.sleep(2000);
         js.executeScript("arguments[0].scrollIntoView()", element);
-        element.click();
+        Thread.sleep(2000); element.click();
     }
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\Asus\\Downloads\\Framework\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "C:\\Users\\mahes_v3cxnvk\\Downloads\\msedgedriver.exe");
        // Logger log = LogManager.getLogger(LogExample.class.getName());
         driver = new EdgeDriver();
         driver.get("https://the-internet.herokuapp.com/");
@@ -186,6 +186,15 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
     public void InfiniteScroll() throws InterruptedException {
         Thread.sleep(2000);
         ScrollintoView(InfinteScoll);
+
+
+    }
+    public void openJQueryUIMenusSection1() throws InterruptedException {
+        driver.findElement(UI_Menu).click();Thread.sleep(2000);
+        driver.findElement(ENABLED).click();Thread.sleep(2000);
+        driver.findElement(Download).click();Thread.sleep(2000);
+        driver.findElement(PDF).click();Thread.sleep(2000);
+
 
 
     }

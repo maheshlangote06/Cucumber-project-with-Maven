@@ -9,5 +9,6 @@ Feature: LoginToApplication
    # Then Open Entry AD Section
    # Then Open Upload File Section
   #  Then Open Hovers Section
-    Then Open Infinite Scroll Section
+   # Then Open Infinite Scroll Section
+    Then Open JQuery UI Menus Section
     And close the application

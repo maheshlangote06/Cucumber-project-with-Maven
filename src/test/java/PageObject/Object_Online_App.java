@@ -31,6 +31,10 @@ public class Object_Online_App {
     public static By userName2 = By.xpath("//h5[normalize-space()='name: user3']");
     public static By ViewProfile = By.xpath("//div[@class='row']//div[3]//div[1]//a[1]");
     public static By InfinteScoll = By.xpath("//a[normalize-space()='Infinite Scroll']");
+    public static By UI_Menu = By.xpath("//a[normalize-space()='JQuery UI Menus']");
+    public static By ENABLED = By.xpath("//a[normalize-space()='Enabled']");
+    public static By Download = By.xpath("//a[normalize-space()='Downloads']");
+    public static By PDF = By.xpath("//a[normalize-space()='Downloads']");
 
 
 

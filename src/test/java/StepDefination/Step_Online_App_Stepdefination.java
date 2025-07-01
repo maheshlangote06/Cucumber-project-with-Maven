@@ -63,4 +63,9 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
     public void openInfiniteScrollSection() throws InterruptedException {
         InfiniteScroll();
     }
+
+    @Then("Open JQuery UI Menus Section")
+    public void openJQueryUIMenusSection() throws InterruptedException {
+        openJQueryUIMenusSection1();
+    }
 }
