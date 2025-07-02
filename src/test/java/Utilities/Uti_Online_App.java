@@ -15,6 +15,8 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
     WebDriver driver;
 
     AllMethode methode = new AllMethode();
+    ReadConfg readConfg = new ReadConfg();
+    String url1 = readConfg.getBaseURL();
 
     public void ScrollintoView(By infinteScoll) throws InterruptedException {
         Thread.sleep(2000);
@@ -28,7 +30,7 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
         System.setProperty("webdriver.edge.driver", "C:\\Users\\mahes_v3cxnvk\\Downloads\\msedgedriver.exe");
        // Logger log = LogManager.getLogger(LogExample.class.getName());
         driver = new EdgeDriver();
-        driver.get("https://the-internet.herokuapp.com/");
+        driver.get(url1);
         driver.manage().window().maximize();Thread.sleep(1000);
         System.out.println("Page Opened");
         String pageTitle = driver.getTitle();
