@@ -2,6 +2,7 @@ package PageObject;
 
 import org.openqa.selenium.By;
 
+
 public class Object_Online_App {
     public static By AddRemoveElements = By.xpath("//a[normalize-space()='Add/Remove Elements']");
     public static By AddElement = By.xpath("//button[@onclick='addElement()']");
@@ -31,7 +32,9 @@ public class Object_Online_App {
     public static By userName2 = By.xpath("//h5[normalize-space()='name: user3']");
     public static By ViewProfile = By.xpath("//div[@class='row']//div[3]//div[1]//a[1]");
     public static By InfinteScoll = By.xpath("//a[normalize-space()='Infinite Scroll']");
-
+    public static By ProvideInput = By.xpath("//a[normalize-space()='Inputs']");
+    public static By Clickk = By.xpath("//input[@type='number']");
+    public static By Increment = By.xpath("//input[@type='number']");
 
 
 }

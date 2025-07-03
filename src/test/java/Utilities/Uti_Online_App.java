@@ -1,5 +1,6 @@
 package Utilities;
 
+import PageObject.Object_Online_App;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -11,17 +12,17 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
+public class Uti_Online_App<iWebElement> extends Object_Online_App{
     WebDriver driver;
 
     AllMethode methode = new AllMethode();
 
     public void ScrollintoView(By infinteScoll) throws InterruptedException {
         Thread.sleep(2000);
-        JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);
-        WebElement element = driver.findElement(infinteScoll);   Thread.sleep(2000);
-        js.executeScript("arguments[0].scrollIntoView()", element);
-        element.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = driver.findElement(infinteScoll);
+        js.executeScript("arguments[0].scrollIntoView()", element);Thread.sleep(2000);
+        element.click();Thread.sleep(2000);
     }
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
@@ -50,7 +51,6 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
 //        Cell cell = row.createCell(0);
 //        cell.setCellValue("YourText");
        // int rowCount=sheet1.getLastRowNum()-sheet1.getFirstRowNum();System.out.println(rowCount);
-
         driver.navigate().back();Thread.sleep(2000);
     }
     public void closeTheApplication() {
@@ -75,8 +75,6 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
 
         Thread.sleep(2000);
         driver.findElement(DropDown).click();
-
-
         //getOptions: getOptions( ) : List<WebElement>
         Select objSelect3 = new Select(driver.findElement(DropdownList));
         List<WebElement> elementCount = objSelect3.getOptions();
@@ -103,7 +101,6 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
         driver.navigate().back();Thread.sleep(2000);
 //        WebElement iFrame = driver.findElement(Iframe);
 //        driver.switchTo().frame(iFrame);Thread.sleep(2000);
-//
 //        WebElement Text = driver.findElement(Textt);
 //        System.out.println(Text);Thread.sleep(2000);
 //        driver.findElement(Click).click();Thread.sleep(2000);
@@ -111,7 +108,6 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
     public void UploadFile() throws InterruptedException, IOException {
         driver.findElement(ClickonFileUpload).click(); Thread.sleep(2000);
        // WebElement chooseFile = driver.findElement(Choosefile);
-
         // Use Actions class to move to the "Choose File" button and click on it
 //        Actions ac = new Actions(driver);
 //        ac.click(chooseFile).perform();
@@ -138,26 +134,22 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
             ((JavascriptExecutor) driver).executeScript("arguments[0].volume = 5;", element);Thread.sleep(2000);
         }
     }
-
     public void Hovers() throws InterruptedException {
         driver.findElement(Hover).click();Thread.sleep(2000);
            WebElement ele = driver.findElement(HoverOnElement);
         WebElement ele1 = driver.findElement(HoverOnElement1);
            WebElement ele2 = driver.findElement(HoverOnElement2);
-
         Actions action = new Actions(driver);Thread.sleep(2000);
         action.moveToElement(ele).perform();Thread.sleep(2000);
         WebElement someWebElement = driver.findElement(userName);
         try {
             if(someWebElement.isDisplayed()){
-
                 String UserDetails = someWebElement.getText();
                 System.out.println(UserDetails);Thread.sleep(2000);
             }}
         catch(Exception e){
             System.out.println("User details not available");
         }
-
         action.moveToElement(ele1).perform();Thread.sleep(2000);
         WebElement someWebElement1 = driver.findElement(userName1);
         try {
@@ -168,8 +160,6 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
         catch(Exception e){
             System.out.println("User details not available");
         }
-
-
        action.moveToElement(ele2).perform();Thread.sleep(2000);
         WebElement someWebElement2 = driver.findElement(userName2);
         Boolean Flag = someWebElement2.isDisplayed();
@@ -177,16 +167,25 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
             String UserDetails2 = someWebElement2.getText();Thread.sleep(2000);
             System.out.println(UserDetails2);
             driver.findElement(ViewProfile).click();
-
         } else {
             System.out.println("User details not available");
         }
-
     }
     public void InfiniteScroll() throws InterruptedException {
         Thread.sleep(2000);
         ScrollintoView(InfinteScoll);
+    }
+    public void provideInput() throws InterruptedException {
+        ScrollintoView(ProvideInput);
 
-
+driver.findElement(Clickk).click();Thread.sleep(1000);
+int i = 0;
+        for(i=0;i<=10;i++)
+        {
+            WebElement increment = driver.findElement(Increment);
+            increment.click();Thread.sleep(1000);
+            increment.clear();
+            System.out.println(i);
+        }
     }
 }
