@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
+public class Uti_Online_App extends PageObject.Object_Online_App{
     WebDriver driver;
 
     AllMethode methode = new AllMethode();
@@ -27,7 +27,7 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
     }
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\mahes_v3cxnvk\\Downloads\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "C:\\Users\\617018917\\Downloads\\Maven Projects\\Cucumber-project-with-Maven\\src\\test\\Drivers\\msedgedriver.exe");
        // Logger log = LogManager.getLogger(LogExample.class.getName());
         driver = new EdgeDriver();
         driver.get(url1);
@@ -174,8 +174,8 @@ public class Uti_Online_App<iWebElement> extends PageObject.Object_Online_App{
 
        action.moveToElement(ele2).perform();Thread.sleep(2000);
         WebElement someWebElement2 = driver.findElement(userName2);
-        Boolean Flag = someWebElement2.isDisplayed();
-        if (Flag == true) {
+        boolean Flag = someWebElement2.isDisplayed();
+        if (Flag) {
             String UserDetails2 = someWebElement2.getText();Thread.sleep(2000);
             System.out.println(UserDetails2);
             driver.findElement(ViewProfile).click();

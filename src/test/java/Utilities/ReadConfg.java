@@ -8,7 +8,7 @@ public class ReadConfg {
 
 
     Properties properties;
-    String path = "C:\\Users\\mahes_v3cxnvk\\IdeaProjects\\Cucumber-project-with-Maven\\Configuration\\config.properties";
+    String path = "C:\\Users\\617018917\\Downloads\\Maven Projects\\Cucumber-project-with-Maven\\src\\test\\java\\Utilities\\config.properties";
 
     //Constructor
     public ReadConfg() {
