@@ -1,5 +1,7 @@
-package Utilities;
+package Pages;
 
+import Utilities.AllMethode;
+import Utilities.ReadConfg;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -11,13 +13,24 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-public class Uti_Online_App extends PageObject.Object_Online_App{
+public class Page_Online_App extends PageObject.Object_Online_App{
     WebDriver driver;
 
     AllMethode methode = new AllMethode();
     ReadConfg readConfg = new ReadConfg();
     String url1 = readConfg.getBaseURL();
-
+    public void  Openbrowserr() throws InterruptedException {
+        System.out.println("Application started");
+        System.setProperty("webdriver.edge.driver", "C:\\Users\\617018917\\Downloads\\Maven Projects\\Cucumber-project-with-Maven\\src\\test\\Drivers\\msedgedriver.exe");
+        // Logger log = LogManager.getLogger(LogExample.class.getName());
+        driver = new EdgeDriver();
+        driver.get(url1);
+        driver.manage().window().maximize();Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        System.out.println("Page Opened");
+        String pageTitle = driver.getTitle();
+        System.out.println("Page Title: " + pageTitle);  Thread.sleep(4000);
+    }
     public void ScrollintoView(By infinteScoll) throws InterruptedException {
         Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);
@@ -28,13 +41,13 @@ public class Uti_Online_App extends PageObject.Object_Online_App{
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
         System.setProperty("webdriver.edge.driver", "C:\\Users\\617018917\\Downloads\\Maven Projects\\Cucumber-project-with-Maven\\src\\test\\Drivers\\msedgedriver.exe");
-       // Logger log = LogManager.getLogger(LogExample.class.getName());
         driver = new EdgeDriver();
         driver.get(url1);
         driver.manage().window().maximize();Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("Page Opened");
         String pageTitle = driver.getTitle();
-        System.out.println("Page Title: " + pageTitle);  Thread.sleep(2000);
+        System.out.println("Page Title: " + pageTitle);  Thread.sleep(1000);
     }
     public void ClickonAddorRemoveElements() throws InterruptedException {
     driver.findElement(AddRemoveElements).click();Thread.sleep(2000);System.out.println("Clicked on Add/Remove element");
@@ -62,14 +75,14 @@ public class Uti_Online_App extends PageObject.Object_Online_App{
 
         Thread.sleep(2000);
         driver.findElement(DragNdrop).click(); Thread.sleep(2000);
-        WebElement From=driver.findElement(By.xpath("//div[@id='column-a']"));methode.putwait();
+        WebElement From=driver.findElement(By.xpath("//div[@id='column-a']"));
 
         //Element on which need to drop.
-        WebElement To=driver.findElement(By.xpath("//div[@id='column-b']"));methode.putwait();
+        WebElement To=driver.findElement(By.xpath("//div[@id='column-b']"));
 
         //Using Action class for drag and drop.
-        Actions act=new Actions(driver);methode.putwait();
-        act.dragAndDrop(From, To).build().perform();methode.putwait();Thread.sleep(5000);
+        Actions act=new Actions(driver);
+        act.dragAndDrop(From, To).build().perform();Thread.sleep(5000);
         System.out.println("Dragged and dropped.");
         driver.navigate().back();Thread.sleep(2000);
     }

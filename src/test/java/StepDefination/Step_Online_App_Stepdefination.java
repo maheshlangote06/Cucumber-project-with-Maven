@@ -1,16 +1,13 @@
 package StepDefination;
 
-import Utilities.Uti_Online_App;
+import Pages.Page_Online_App;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Step_Online_App_Stepdefination extends Uti_Online_App {
+public class Step_Online_App_Stepdefination extends Page_Online_App {
 
     @Given("Login to application.")
     public void login_to_application() throws InterruptedException {
@@ -23,7 +20,7 @@ public class Step_Online_App_Stepdefination extends Uti_Online_App {
     }
 
     @And("close the application")
-    public void closeTheApplicationn() {
+    public void closeTheApplication() {
         closeTheApplication();
     }
 
