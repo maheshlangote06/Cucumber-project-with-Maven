@@ -54,6 +54,7 @@ public class Page_Online_App extends PageObject.Object_Online_App{
     driver.findElement(AddElement).click();Thread.sleep(2000);
     driver.navigate().back();Thread.sleep(2000);
    // driver.findElement(BasicAuth).click();Thread.sleep(2000);
+
     }
     public void Challenging_DOM() throws InterruptedException, IOException {
         driver.findElement(Challenging_DOM).click();Thread.sleep(2000);System.out.println("Clicked on - Challenging_DOM");

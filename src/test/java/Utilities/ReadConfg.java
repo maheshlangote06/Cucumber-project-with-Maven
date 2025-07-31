@@ -21,7 +21,6 @@ public class ReadConfg {
             e.printStackTrace();
         }
     }
-
     public String getBaseURL() {
         String value = properties.getProperty("baseURL");
         if(value !=null){

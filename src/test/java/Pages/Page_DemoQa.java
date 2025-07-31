@@ -3,14 +3,13 @@ package Pages;
 import PageObject.Object_DemoQa;
 import Utilities.AllMethode;
 import Utilities.ReadConfg;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 
 public class Page_DemoQa extends Object_DemoQa {
@@ -26,10 +25,32 @@ public class Page_DemoQa extends Object_DemoQa {
         driver = new EdgeDriver();
         driver.get(url1);
         driver.manage().window().maximize();Thread.sleep(1000);
+//        Actions actions = new Actions(driver);
+//        actions.keyDown(Keys.CONTROL)
+//                .sendKeys(Keys.SUBTRACT)
+//                .keyUp(Keys.CONTROL)
+//                .perform();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='75%'");
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         System.out.println("Page Opened");
         String pageTitle = driver.getTitle();
         System.out.println("Page Title: " + pageTitle);  Thread.sleep(4000);
+    }
+    public void SwitchToChildWindow() throws InterruptedException {
+        String parentWindow = driver.getWindowHandle();
+        Set<String> handles =  driver.getWindowHandles();
+        for(String windowHandle  : handles)
+        {
+            if(!windowHandle.equals(parentWindow))
+            {
+                driver.switchTo().window(windowHandle);
+                Thread.sleep(2000);
+
+            }
+        }
     }
     public void ScrollIntoViewElement(By element) throws InterruptedException {
 
@@ -105,9 +126,126 @@ System.out.println(size);
         System.out.println(impressiveText1);
 
     }
+    public void WebTable(String firstname, String lastNamee, String email, String age, String salery, String department) throws InterruptedException, IOException {
 
-    public void WebTable() throws InterruptedException {
+        ScrollIntoViewElementandClick(Elements); Thread.sleep(1000);
         ScrollIntoViewElementandClick(WebTable);
-        ScrollIntoViewElementandClick(WebTable);
+     //   ScrollIntoViewElementandClick(Add);
+
+//            SwitchToChildWindow();
+//            Thread.sleep(2000);
+//
+//            driver.findElement(SendName).sendKeys("Mahesh");
+//            driver.findElement(LastName).sendKeys("Mahesh");
+//            driver.findElement(Email).sendKeys("Mahesh@gmail.com");
+//            driver.findElement(Age).sendKeys("16");
+//            driver.findElement(Salery).sendKeys("14");
+//            driver.findElement(Department).sendKeys("Mahesh");
+//            driver.findElement(Submit).click();
+//
+//        ScrollIntoViewElementandClick(Add);
+       // SwitchToChildWindow();
+        Thread.sleep(2000);
+
+
+//        driver.findElement(SendName).sendKeys(firstname);
+//        driver.findElement(LastName).sendKeys(lastNamee);
+//        driver.findElement(Email).sendKeys(email);
+//        driver.findElement(Age).sendKeys(age);
+//        driver.findElement(Salery).sendKeys(salery);
+//        driver.findElement(Department).sendKeys(department);
+//        driver.findElement(Submit).click();
+
+        ScrollIntoViewElementandClick(FirstName);
+        String Cell01 = driver.findElement(By.xpath("(//div[@class = 'rt-resizable-header-content'])[1]")).getText();
+        List<WebElement> listofElement =  driver.findElements(By.xpath("(//div[@class = 'rt-resizable-header-content'])"));
+        int listofElements = listofElement.size();
+        System.out.println(listofElements);
+        int i;
+        int o;
+        int p;
+        int l;
+
+        for(i=1; i<=listofElements; i++){
+          String XpathCount = ("(//div[@class = 'rt-resizable-header-content'])["+i+"]");
+
+          for (o = 1; o<=listofElements; o++ ){
+              String AllHeader = driver.findElement(By.xpath(XpathCount)).getText();
+
+              for (p = 1; p<=listofElements; p++){
+                  String Values = ("(//div[@class='rt-td'])["+p+"]");
+
+                  for (l =1; l<=listofElements;l++){
+                  String KeyValues = driver.findElement(By.xpath(Values)).getText();
+                  System.out.println(AllHeader+ " is  "+ KeyValues );
+                  break;
+                  }
+                  break;
+              }
+              break;
+          }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        FileInputStream fs = new FileInputStream("C:\\Users\\617018917\\Downloads\\Maven Projects\\TestDataSheet.xlsx");
+//        XSSFWorkbook workbook = new XSSFWorkbook(fs);
+//        XSSFSheet sheet = workbook.getSheetAt(0);
+
+//        Row row = sheet.getRow(0);
+//        Cell cell = row.getCell(0);
+//        String FirstName = cell.getStringCellValue();
+
+//        Row row1 = sheet.getRow(1);
+//        Cell cell1 = row1.getCell(1);
+//        String LastName = cell1.getStringCellValue();
+//        FileInputStream file = new FileInputStream("C:\\Users\\617018917\\Downloads\\Maven Projects\\TestDataSheet.xlsx");
+
+//        XSSFWorkbook workbook = new XSSFWorkbook(file);
+//        XSSFSheet sheet= workbook.getSheet("Sheet1");
+
+//        int noOfRows = sheet.getLastRowNum(); // returns the row count
+//        System.out.println("No. of Records in the Excel Sheet:" + noOfRows);
+
+//        int cols=sheet.getRow(1).getLastCellNum();
+//        System.out.println("No. of Records in the Excel Sheet:" + cols);
+
+//        driver.findElement(SendName).sendKeys();
+//        driver.findElement(SendName).sendKeys();
+//        driver.findElement(SendName).sendKeys();
+//        driver.findElement(SendName).sendKeys();
+//        driver.findElement(SendName).sendKeys();
+
     }
 }

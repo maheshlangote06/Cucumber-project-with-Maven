@@ -14,6 +14,15 @@ public class Object_DemoQa {
     public static By Clickonimpressive = By.xpath("//label[@for='impressiveRadio']");
     public static By TextPrint = By.xpath("//p[@class='mt-3']");
     public static By WebTable = By.xpath("//span[normalize-space()='Web Tables']");
+    public static By Add = By.xpath("//button[@id='addNewRecordButton']");
+    public static By SendName = By.xpath("//input[@id='firstName']");
+    public static By LastName = By.xpath("//input[@id='lastName']");
+    public static By Email = By.xpath("//input[@id='userEmail']");
+    public static By Age = By.xpath("//input[@id='age']");
+    public static By Salery = By.xpath("//input[@id='salary']");
+    public static By Department = By.xpath("//input[@id='department']");
+    public static By Submit = By.xpath("//button[@id='submit']");
+    public static By FirstName = By.xpath("(//div[@class = 'rt-resizable-header-content'])[1]");
     public static By AddElement3 = By.xpath("");
 
 }
