@@ -22,7 +22,7 @@ public class ReadConfg {
         }
     }
     public String getBaseURL() {
-        String value = properties.getProperty("baseURL");
+        String value = properties.getProperty("URL");
         if(value !=null){
             return value;}
         else {

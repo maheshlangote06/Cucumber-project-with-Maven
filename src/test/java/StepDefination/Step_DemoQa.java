@@ -1,7 +1,7 @@
 package StepDefination;
 
 import Pages.Page_DemoQa;
-import Utilities.AllMethode;
+import Pages.AllMethode;
 import Utilities.ReadConfg;
 import Pages.Page_Online_App;
 import io.cucumber.datatable.DataTable;

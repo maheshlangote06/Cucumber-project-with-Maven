@@ -1,6 +1,5 @@
 package Pages;
 
-import Utilities.AllMethode;
 import Utilities.ReadConfg;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,7 +15,7 @@ import java.util.List;
 public class Page_Online_App extends PageObject.Object_Online_App{
     WebDriver driver;
 
-    AllMethode methode = new AllMethode();
+
     ReadConfg readConfg = new ReadConfg();
     String url1 = readConfg.getBaseURL();
     public void  Openbrowserr() throws InterruptedException {

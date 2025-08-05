@@ -1,7 +1,6 @@
 package Pages;
 
 import PageObject.Object_DemoQa;
-import Utilities.AllMethode;
 import Utilities.ReadConfg;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -18,6 +17,7 @@ public class Page_DemoQa extends Object_DemoQa {
     ReadConfg readConfg = new ReadConfg();
     Page_Online_App page_Online_App = new Page_Online_App();
     String url1 = readConfg.getBaseURL();
+
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
         System.setProperty("webdriver.edge.driver", "C:\\Users\\617018917\\Downloads\\Maven Projects\\Cucumber-project-with-Maven\\src\\test\\Drivers\\msedgedriver.exe");
@@ -134,7 +134,6 @@ System.out.println(size);
 
 //            SwitchToChildWindow();
 //            Thread.sleep(2000);
-//
 //            driver.findElement(SendName).sendKeys("Mahesh");
 //            driver.findElement(LastName).sendKeys("Mahesh");
 //            driver.findElement(Email).sendKeys("Mahesh@gmail.com");
@@ -161,29 +160,31 @@ System.out.println(size);
         List<WebElement> listofElement =  driver.findElements(By.xpath("(//div[@class = 'rt-resizable-header-content'])"));
         int listofElements = listofElement.size();
         System.out.println(listofElements);
-        int i;
-        int o;
+        int i=0;
         int p;
-        int l;
+        int o;
 
-        for(i=1; i<=listofElements; i++){
-          String XpathCount = ("(//div[@class = 'rt-resizable-header-content'])["+i+"]");
 
-          for (o = 1; o<=listofElements; o++ ){
-              String AllHeader = driver.findElement(By.xpath(XpathCount)).getText();
+        for(o=i; o<listofElements; ){
+          String XpathCount = ("(//div[@class = 'rt-resizable-header-content'])["+o+"]");
+              String HeaderName = driver.findElement(By.xpath(XpathCount)).getText();
 
-              for (p = 1; p<=listofElements; p++){
+              for (p = i; p<listofElements; ){
                   String Values = ("(//div[@class='rt-td'])["+p+"]");
-
-                  for (l =1; l<=listofElements;l++){
                   String KeyValues = driver.findElement(By.xpath(Values)).getText();
-                  System.out.println(AllHeader+ " is  "+ KeyValues );
-                  break;
+                  System.out.println(HeaderName+ " is  "+ KeyValues );
+                  if (i==(listofElements-1)){
+                      listofElements=1;
+
                   }
+
+                  if(i==6){
+                      i=0;
+                  } i++;
                   break;
               }
-              break;
-          }
+
+
 
 
 

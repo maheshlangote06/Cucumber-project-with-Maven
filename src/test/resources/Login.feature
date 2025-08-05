@@ -1,8 +1,7 @@
-Feature: LoginToApplication
+Feature: LoginToApplication.
 
-  Scenario: Verify Login Functionality
-      Given Login to application
-      And Login to Sabor and search order
-      When ninjas meet, they will fight
-      Then one ninja dies
-      And there is one ninja less alive
+  Scenario: Verify Login Functionality.
+    Given Login to sabor application
+    Then User need to provide user and pass
+    And User should check first page
+    Then User should check SOGEA avaialability
