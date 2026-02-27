@@ -7,7 +7,7 @@ public class Practice_Page {
 WebDriver driver;
 public void fill_data() throws InterruptedException {
     System.out.println("Application started");
-    System.setProperty("webdriver.edge.driver", "src/test/java/Utilities/msedgedriver.exe");
+    System.setProperty("webdriver.edge.driver", "src/test/java/driver/msedgedriver.exe");
     // Logger log = LogManager.getLogger(LogExample.class.getName());
     driver = new EdgeDriver();
     driver.get("https://testautomationpractice.blogspot.com");
