@@ -23,7 +23,7 @@ public class MyStepdefs {
     @Given("Login to application")
     public void login_to_application() throws InterruptedException {
         System.out.println("Application started");
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\Asus\\Downloads\\Framework\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "src/test/java/Utilities/msedgedriver.exe");
         driver = new EdgeDriver();
         driver.get("https://bach.cp.test1.9459360a754efbe.euwe2.prd-plat.aws.bt.com/cpportal/home");
         Thread.sleep(3000);

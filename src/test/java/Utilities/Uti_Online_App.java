@@ -26,7 +26,7 @@ public class Uti_Online_App<iWebElement> extends Object_Online_App{
     }
     public void  Openbrowser() throws InterruptedException {
         System.out.println("Application started");
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\Asus\\Downloads\\Framework\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "src/test/java/Utilities/msedgedriver.exe");
        // Logger log = LogManager.getLogger(LogExample.class.getName());
         driver = new EdgeDriver();
         driver.get("https://the-internet.herokuapp.com/");
@@ -176,11 +176,11 @@ public class Uti_Online_App<iWebElement> extends Object_Online_App{
         ScrollintoView(InfinteScoll);
     }
     public void provideInput() throws InterruptedException {
-        ScrollintoView(ProvideInput);
+            ScrollintoView(ProvideInput);
 
-driver.findElement(Clickk).click();Thread.sleep(1000);
-int i = 0;
-        for(i=0;i<=10;i++)
+            driver.findElement(Clickk).click();Thread.sleep(1000);
+            int i = 0;
+             for(i=0;i<=10;i++)
         {
             WebElement increment = driver.findElement(Increment);
             increment.click();Thread.sleep(1000);
