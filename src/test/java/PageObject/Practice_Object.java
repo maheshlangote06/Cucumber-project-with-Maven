@@ -14,7 +14,7 @@ public class Practice_Object {
     public static By monday = By.xpath("//input[@id='monday']");
     public static By country = By.xpath("//select[@id='country']");
     public static By colors = By.xpath("//select[@id='colors']//option[1]");
-//    public static By Iframe = By.xpath("");
+    public static By Page = By.xpath("//h1[@class='title']");
 //    public static By Iframe = By.xpath("");
 //    public static By Iframe = By.xpath("");
 //    public static By Iframe = By.xpath("");
