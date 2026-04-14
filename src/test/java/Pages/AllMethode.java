@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class AllMethode extends Page_Online_App {
@@ -19,9 +21,9 @@ public class AllMethode extends Page_Online_App {
 
     public void Openbrowserr() throws InterruptedException {
         System.out.println("Application started");
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\617018917\\Downloads\\Maven Projects\\Cucumber-project-with-Maven\\src\\test\\Drivers\\msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "src/test/java/driver/msedgedriver.exe");
 
-        this.driver = new EdgeDriver();
+        WebDriver driver = new EdgeDriver();
         driver.get(url1);
         driver.manage().window().maximize();Thread.sleep(1000);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -36,22 +38,26 @@ public void FluentWait(By Elements){
             .withTimeout(Duration.ofSeconds(30))  // Maximum time to wait
             .pollingEvery(Duration.ofMillis(3)) // Interval between each poll
             .ignoring(NoSuchElementException.class); // Exceptions to ignore
-  wait.until(ExpectedConditions.visibilityOfElementLocated(Elements));
-
+             wait.until(ExpectedConditions.visibilityOfElementLocated(Elements));
 }
 public void SwitchToChildWindow() throws InterruptedException {
-    String parentWindow = driver.getWindowHandle();
-    Set<String> handles =  driver.getWindowHandles();
+    String parentWindow = driver.getWindowHandle();  Thread.sleep(2000);
+    Set<String> handles =  driver.getWindowHandles();  Thread.sleep(2000);
+   // List<String> tabs = new ArrayList<>(handles);
     for(String windowHandle  : handles)
     {
         if(!windowHandle.equals(parentWindow))
         {
             driver.switchTo().window(windowHandle);
             Thread.sleep(2000);
-
+            System.out.println("Tab Switched to second ");
         }
-    }
-}
+
+        // Switch to the third tab (index 2)
+//        if (tabs.size() >= 3) {
+//            driver.switchTo().window(tabs.get(2));
+    //}
+}}
     public void ScrollintoView(By infinteScoll) throws InterruptedException {
         Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);

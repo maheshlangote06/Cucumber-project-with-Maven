@@ -1,27 +1,42 @@
 package TestNg;
 
+import PageObject.TestNg_Object;
+import Pages.Practice_Page;
+import Pages.TestNg_Page;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
 
-public class TestNg {
+public class TestNg extends TestNg_Page {
 
     @Test(priority = 1)
-    public void dashboardTest() {
-        System.out.println("Priority 1");
+    public void LoginToWebSite() {
+      //  System.out.println("Priority 1");
+        logintowebsite();
     }
 
-    @Test(priority = -1)
-    public void initializeEnvironmentTest() {
-        System.out.println("Priority 2");
+    @Test(priority = 2)
+    public void DropDownCheck() throws InterruptedException {
+     //   System.out.println("Priority 2");
+       //DropDown();
+        // DynamicButton();
+
     }
 
-    @Test(priority = 0)
+    @Test(priority = 3)
+    public void initializeEnvironmentTest() throws InterruptedException {
+        //Alert();
+        TabSwitch();
+    }
+
+    @Test(priority = 4)
     public void loginTest() {
-        System.out.println("Priority 3");
+        //System.out.println("Priority 4");
     }
 
-    @Test
+    @Test(priority = 5)
     public void logoutTest() { // Default priority 0
-        System.out.println("Logout Test executed (alphabetical order tie-break with loginTest)");
+        quit();      //System.out.println("Priority 5");
     }
 }

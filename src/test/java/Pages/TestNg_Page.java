@@ -1,0 +1,148 @@
+package Pages;
+
+import PageObject.TestNg_Object;
+import Utilities.ReadConfg;
+import org.openqa.selenium.*;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
+
+public class TestNg_Page extends TestNg_Object {
+
+    AllMethode getmethod = new AllMethode();
+    protected static WebDriver driver;
+    ReadConfg readConfg = new ReadConfg();
+    String url1 = readConfg.getBaseURL();
+
+    public void logintowebsite(){
+    System.out.println("Application started");
+    System.setProperty("webdriver.edge.driver", "src/test/java/driver/msedgedriver.exe");
+    driver = new EdgeDriver();
+    driver.get(url1);
+    driver.manage().window().maximize();
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("document.body.style.zoom='75%'");
+    }
+    public void DropDown() throws InterruptedException {
+    WebElement xyz = driver.findElement(By.xpath("//select[@id='country']"));
+    Select select = new Select(xyz);
+    select.selectByVisibleText("Canada");    waitt();
+    select.selectByIndex(4);    waitt();
+    }
+    public void FluentWait(By Elements){
+
+        FluentWait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(30))  // Maximum time to wait
+                .pollingEvery(Duration.ofMillis(3)) // Interval between each poll
+                .ignoring(NoSuchElementException.class); // Exceptions to ignore
+        wait.until(ExpectedConditions.visibilityOfElementLocated(Elements));
+    }
+    public void DynamicButton() throws InterruptedException {
+        String ButtonText = driver.findElement(DynamicButton).getText();waitt();
+        System.out.println(ButtonText);
+        if (ButtonText.equals("START")) {
+            driver.findElement(DynamicButton).click();
+            System.out.println("Start Selected");waitt();
+
+        } String ButtonText1 = driver.findElement(DynamicButton1).getText();waitt();
+        if (ButtonText1.equals("STOP")) {
+            driver.findElement(DynamicButton1).click();
+            System.out.println("Stop Selected");waitt();
+      }
+    }
+    public void ScrollintoView(By infinteScoll) throws InterruptedException {
+        Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);
+        WebElement element = driver.findElement(infinteScoll);   Thread.sleep(2000);
+        js.executeScript("arguments[0].scrollIntoView()", element);
+
+    }
+
+    public void Alert() throws InterruptedException {
+        ScrollintoView(Alert);waitt();
+
+        driver.findElement(Alert).click();waitt();
+        String alertText = driver.switchTo().alert().getText();
+        System.out.println("This is alert Text - " + alertText);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.accept();waitt();
+        System.out.println("Alert Accepted");
+
+        driver.findElement(ConfirmAlert).click();waitt();
+        String alertText2 = driver.switchTo().alert().getText();
+        System.out.println("This is alert Text - " + alertText2);
+        Alert alert2 = wait.until(ExpectedConditions.alertIsPresent());
+        alert2.accept();waitt();
+        System.out.println("Alert Confirmed");
+
+        driver.findElement(ConfirmAlert).click();waitt();
+        Alert alert3 = wait.until(ExpectedConditions.alertIsPresent());
+        alert3.dismiss();waitt();
+        System.out.println("Alert Cancelled");
+
+
+        driver.findElement(PromtAlert).click();waitt();
+        Alert alert21 = wait.until(ExpectedConditions.alertIsPresent());
+        alert21.sendKeys("Mahesh Langote");waitt();
+        alert21.accept();waitt();
+        System.out.println("Clicked on OK");
+
+
+    }
+    public void TabSwitch() throws InterruptedException {
+//        driver.findElement(WindowHandle).click();waitt();
+//        getmethod.SwitchToChildWindow();waitt();
+
+        driver.findElement(PopupWindowHandle).click();waitt();waitt();
+        getmethod.SwitchToChildWindow();waitt();waitt();
+        driver.findElement(Register).click();waitt();waitt();
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void waitt() throws InterruptedException {
+    Thread.sleep(2000);
+    }
+
+    public void quit(){
+        //driver.quit();
+    }
+    }
