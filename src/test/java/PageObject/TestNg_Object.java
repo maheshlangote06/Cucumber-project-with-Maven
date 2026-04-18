@@ -15,5 +15,10 @@ public class TestNg_Object {
     public static By WindowHandle = By.xpath("//button[@onclick='myFunction()']");
     public static By PopupWindowHandle = By.xpath("//button[@id='PopUp']");
     public static By Register = By.xpath("//a[normalize-space()='Register now!']");
+    public static By MouseHover = By.xpath("//button[@class='dropbtn']");
+    public static By Mobile = By.xpath("//a[normalize-space()='Mobiles']");
+    public static By laptop = By.xpath("//a[normalize-space()='Laptops']");
+    public static By DoubleClick = By.xpath("//button[normalize-space()='Copy Text']");
+    public static By Dragdrop= By.xpath("//p[normalize-space()='Drag me to my target']");
 
 }

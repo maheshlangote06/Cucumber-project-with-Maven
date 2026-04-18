@@ -27,12 +27,15 @@ public class TestNg extends TestNg_Page {
     @Test(priority = 3)
     public void initializeEnvironmentTest() throws InterruptedException {
         //Alert();
-        TabSwitch();
+        //TabSwitch();
+       //Mosehover();
     }
 
     @Test(priority = 4)
-    public void loginTest() {
-        //System.out.println("Priority 4");
+    public void loginTest() throws InterruptedException {
+        //DoubleCLick();
+        //DragDrop();
+        BrockenLink();
     }
 
     @Test(priority = 5)

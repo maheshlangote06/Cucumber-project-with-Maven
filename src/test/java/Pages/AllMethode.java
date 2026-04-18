@@ -4,6 +4,7 @@ import PageObject.Object_Online_App;
 import Utilities.ReadConfg;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
@@ -11,6 +12,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import static PageObject.TestNg_Object.MouseHover;
 
 public class AllMethode extends Page_Online_App {
 
@@ -23,7 +26,7 @@ public class AllMethode extends Page_Online_App {
         System.out.println("Application started");
         System.setProperty("webdriver.edge.driver", "src/test/java/driver/msedgedriver.exe");
 
-        WebDriver driver = new EdgeDriver();
+       driver = new EdgeDriver();
         driver.get(url1);
         driver.manage().window().maximize();Thread.sleep(1000);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -52,12 +55,12 @@ public void SwitchToChildWindow() throws InterruptedException {
             Thread.sleep(2000);
             System.out.println("Tab Switched to second ");
         }
-
         // Switch to the third tab (index 2)
 //        if (tabs.size() >= 3) {
 //            driver.switchTo().window(tabs.get(2));
     //}
-}}
+}
+    }
     public void ScrollintoView(By infinteScoll) throws InterruptedException {
         Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) driver;Thread.sleep(2000);
@@ -76,5 +79,16 @@ public void SwitchToChildWindow() throws InterruptedException {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", ele);
         ele.click();
         Thread.sleep(2000);
+    }
+    public void MouseHover(By Element) throws InterruptedException {
+
+        WebElement elementToHover = driver.findElement(Element);Thread.sleep(2000);
+
+// 2. Instantiate the Actions class
+        Actions actions = new Actions(driver);Thread.sleep(2000);
+
+// 3. Move to the element and execute
+        actions.moveToElement(elementToHover).perform();Thread.sleep(2000);
+        actions.doubleClick(elementToHover).perform();
     }
 }
